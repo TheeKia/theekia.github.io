@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+  <script src="drs-inputs.js"></script>
+  <link rel="stylesheet" href="drs-inputs.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      background-color: #ecf0f3;
+      font-family: Arial;
+    }
+
+    .wrapper {
+      width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body style="display: grid;width: 100%;height: 100vh;grid-template-columns: 1;grid-template-rows: 2;">
+  <section style="grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;grid-row-end: 2;">
+
+    <div class="wrapper">
+
+      <p class="tInput">
+        <input type="text" name="" placeholder="This is placeholder">
+      </p>
+      <p class="tInput">
+        <input type="text" name="username" id="ID" placeholder="This is placeholder">
+        <label for="ID" data-icon="open_in_new">This is label</label>
+      </p>
+      <p class="tInput rtlI">
+        <input type="password" name="password" id="ID2">
+        <label for="ID2" data-icon="open_in_new">عنوان</label>
+      </p>
+
+      <br><br>
+
+      <p class="fInput" data-expand="selected-files">
+        <input id="localfile" type="file" name="localFile" multiple>
+        <label for="localfile" data-icon="description">Choose File</label>
+      </p>
+      <p id="selected-files"></p>
+
+      <p class="cInput">
+        <input type="checkbox" name="" id="CH" disabled>
+        <label for="CH">
+          <span class="label">The label</span>
+        </label>
+      </p>
+      <p class="cInput">
+        <input type="checkbox" name="" id="CH2">
+        <label for="CH2"><span class="label">The label 2</span></label>
+      </p>
+
+      <p class="rInput">
+        <input type="radio" name="R" id="Radio" disabled>
+        <label for="Radio"><span class="label">The label</span></label>
+      </p>
+      <p class="rInput">
+        <input type="radio" name="R" id="R2">
+        <label for="R2"><span class="label">The label 2</span></label>
+      </p>
+
+      <div class="bInput">
+        <input type="submit" id="sb" value="submit">
+        <label for="sb" data-icon="upload">Submit</label>
+      </div>
+      <div class="bInput">
+        <button id="bi" type="button" disabled></button>
+        <label for="bi" data-icon="settings">Reset</label>
+      </div>
+    </div>
+  </section>
+
+  <!-- DARK -->
+  <section class="tDark"
+    style="background-color: #181818;grid-column-start: 1;grid-column-end: 2;grid-row-start: 2;grid-row-end: 3;direction: rtl;">
+    <div class="wrapper">
+      <div class="tInput">
+        <input type="text" name="" id="IDd">
+        <label for="IDd">Label this is label</label>
+      </div>
+
+      <div class="fInput">
+        <input id="localfileD" type="file" name="localFile">
+        <label for="localfileD" data-icon="description">Choose File</label>
+      </div>
+
+      <div class="cInput">
+        <input type="checkbox" name="" id="CHd">
+        <label for="CHd"><span class="label">عنوان</span></label>
+      </div>
+      <div class="cInput">
+        <input type="checkbox" name="" id="CH2d">
+        <label for="CH2d"><span class="label">چک باکس 2</span></label>
+      </div>
+
+      <div class="rInput">
+        <input type="radio" name="R" id="Radiod">
+        <label for="Radiod"><span class="label">The label</span></label>
+      </div>
+      <div class="rInput">
+        <input type="radio" name="R" id="R2d">
+        <label for="R2d"><span class="label">The label 2</span></label>
+      </div>
+
+      <div class="bInput">
+        <input type="submit" id="sbd" value="submit">
+        <label for="sbd">Submit</label>
+      </div>
+      <div class="bInput">
+        <input type="submit" id="bid" value="reset">
+        <label for="bid">Reset</label>
+      </div>
+    </div>
+  </section>
+</body>
+
+<script>
+  // tInput
+  document.querySelectorAll(".tInput").forEach((tInput) => {
+    new TInput(tInput);
+  });
+  // cr-Input
+  document.querySelectorAll(".cInput").forEach((cInput) => {
+    new CInput(cInput);
+  });
+  document.querySelectorAll(".rInput").forEach((rInput) => {
+    new RInput(rInput);
+  });
+  // Input type file
+  document.querySelectorAll(".fInput").forEach((fInput) => {
+    new FInput(fInput);
+  });
+  // Input type button
+  document.querySelectorAll(".bInput").forEach((bInput) => {
+    let button = new BInput(bInput);
+    button.onClick(() => {
+      button
+        .fetch("https://reqres.in/api/register", "POST", {
+          email: "eve.holt@reqres.in",
+          password: "pistol",
+        })
+        .then((response) => {
+          if (response.ok && response.status === 200) {
+            button.setStatus("success");
+            return response.json();
+          } else {
+            button.setStatus("fail");
+            return response.json();
+          }
+        })
+        .then((result) => {
+          console.log(result);
+        })
+        .catch((err) => {
+          console.log("Network Error", err);
+          button.setStatus("fail");
+        });
+    }, true);
+  });
+</script>
+
+</html>
