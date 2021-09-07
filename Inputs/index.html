@@ -6,173 +6,316 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
-  <script src="drs-inputs.js"></script>
-  <link rel="stylesheet" href="drs-inputs.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      outline: none;
-      box-sizing: border-box;
-    }
-
-    body {
-      width: 100%;
-      background-color: #ecf0f3;
-      font-family: Arial;
-    }
-
-    .wrapper {
-      width: 500px;
-      margin: 0 auto;
-    }
-  </style>
-  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/drs-inputs.js"></script>
+  <link rel="stylesheet" href="css/drs-inputs.css">
+  <title>Inputs</title>
 </head>
 
-<body style="display: grid;width: 100%;height: 100vh;grid-template-columns: 1;grid-template-rows: 2;">
-  <section style="grid-column-start: 1;grid-column-end: 2;grid-row-start: 1;grid-row-end: 2;">
-
-    <div class="wrapper">
-
-      <p class="tInput">
-        <input type="text" name="" placeholder="This is placeholder">
+<body>
+  <div id="Loading">
+    <div class="loader"></div><br>
+    <p class="text">Loading</p>
+  </div>
+  <section class="info">
+    <article class="TInput eachRow x3">
+      <p>TInput</p>
+      <code><span style="color: #045fbb;">parent</span>.rtlI</code>
+      <p>No label</p>
+    </article>
+    <article class="FInput eachRow x2">
+      <p>
+        <span class="span-item" style="flex-basis: 50%;">With extend</span>
+        <span class="span-item" style="flex-basis: 50%;">Simple</span>
       </p>
-      <p class="tInput">
-        <input type="text" name="username" id="ID" placeholder="This is placeholder">
-        <label for="ID" data-icon="open_in_new">This is label</label>
+    </article>
+    <article class="CInput">
+      <p>CInput</p>
+    </article>
+    <article class="RInput">
+      <p>RInput</p>
+    </article>
+    <article class="BInput eachRow x2">
+      <p class="item-parent">
+        <span class="span-item" style="flex-basis: 50%;">Send request</span>
+        <span class="span-item" style="flex-basis: 50%;">Icon Only</span>
       </p>
+      <p class="item-parent">
+        <span class="span-item" style="flex-basis: 50%;">Simple</span>
+        <span class="span-item" style="flex-basis: 50%;">Disabled</span>
+      </p>
+    </article>
+  </section>
+
+  <section class="light">
+    <article class="TInput eachRow x3">
+      <p class="tInput">
+        <input type="text" name="username" autocomplete="username" id="T1" placeholder="This is placeholder">
+        <label for="T1" data-icon="open_in_new">This is label</label>
+      </p>
+
       <p class="tInput rtlI">
-        <input type="password" name="password" id="ID2">
-        <label for="ID2" data-icon="open_in_new">عنوان</label>
+        <input type="password" name="password" autocomplete="current-password" id="T2">
+        <label for="T2" data-icon="open_in_new">عنوان</label>
       </p>
 
-      <br><br>
-
-      <p class="fInput" data-expand="selected-files">
-        <input id="localfile" type="file" name="localFile" multiple>
-        <label for="localfile" data-icon="description">Choose File</label>
+      <p class="tInput">
+        <input type="email" name="email" autocomplete="email" placeholder="This is placeholder">
       </p>
-      <p id="selected-files"></p>
+    </article>
 
+    <article class="FInput eachRow x2">
+      <p class="fInput" data-expand="selected-files" style="width: 300px;">
+        <input id="F1" type="file" name="localFile" multiple>
+        <label for="F1" data-icon="description">Choose File</label>
+      </p>
+      <p id="selected-files" style="width: 300px;"></p>
+    </article>
+
+    <article class="CInput">
       <p class="cInput">
-        <input type="checkbox" name="" id="CH" disabled>
-        <label for="CH">
-          <span class="label">The label</span>
+        <input type="checkbox" name="CH" id="C1" disabled>
+        <label for="C1">
+          <span class="label">Disabled Label</span>
         </label>
       </p>
       <p class="cInput">
-        <input type="checkbox" name="" id="CH2">
-        <label for="CH2"><span class="label">The label 2</span></label>
+        <input type="checkbox" name="CH" id="C2">
+        <label for="C2"><span class="label">The label 2</span></label>
       </p>
+      <p class="cInput">
+        <input type="checkbox" name="CH" id="C3">
+        <label for="C3"><span class="label">The label 3</span></label>
+      </p>
+    </article>
 
+    <article class="RInput">
       <p class="rInput">
-        <input type="radio" name="R" id="Radio" disabled>
-        <label for="Radio"><span class="label">The label</span></label>
+        <input type="radio" name="R" id="R1" disabled>
+        <label for="R1"><span class="label">Disabled Label</span></label>
       </p>
       <p class="rInput">
         <input type="radio" name="R" id="R2">
         <label for="R2"><span class="label">The label 2</span></label>
       </p>
+      <p class="rInput">
+        <input type="radio" name="R" id="R3">
+        <label for="R3"><span class="label">The label 3</span></label>
+      </p>
+    </article>
 
-      <div class="bInput">
-        <input type="submit" id="sb" value="submit">
-        <label for="sb" data-icon="upload">Submit</label>
+    <article class="BInput eachRow x2">
+      <div>
+        <div class="bRequest">
+          <button id="B1" type="button"></button>
+          <label for="B1" data-icon="settings">Send request</label>
+        </div>
+
+        <div class="bInput">
+          <button id="B2" type="button"></button>
+          <label for="B2" data-icon="settings"></label>
+        </div>
       </div>
-      <div class="bInput">
-        <button id="bi" type="button" disabled></button>
-        <label for="bi" data-icon="settings">Reset</label>
+      <div>
+        <div class="bInput">
+          <input type="button" id="B3" value="submit">
+          <label for="B3" data-icon="done">Submit</label>
+        </div>
+        <div class="bInput">
+          <input type="button" id="B4" value="submit" disabled>
+          <label for="B4" data-icon="">Disabled</label>
+        </div>
       </div>
-    </div>
+    </article>
   </section>
 
   <!-- DARK -->
-  <section class="tDark"
-    style="background-color: #181818;grid-column-start: 1;grid-column-end: 2;grid-row-start: 2;grid-row-end: 3;direction: rtl;">
-    <div class="wrapper">
-      <div class="tInput">
-        <input type="text" name="" id="IDd">
-        <label for="IDd">Label this is label</label>
-      </div>
+  <section class="dark" style="background-color: #181818;">
+    <article class="TInput eachRow x3">
+      <p class="tInput">
+        <input type="text" name="username" autocomplete="username" id="DT1" placeholder="This is placeholder">
+        <label for="DT1" data-icon="open_in_new">This is label</label>
+      </p>
 
-      <div class="fInput">
-        <input id="localfileD" type="file" name="localFile">
-        <label for="localfileD" data-icon="description">Choose File</label>
-      </div>
+      <p class="tInput rtlI">
+        <input type="password" name="password" autocomplete="current-password" id="DT2">
+        <label for="DT2" data-icon="open_in_new">عنوان</label>
+      </p>
 
-      <div class="cInput">
-        <input type="checkbox" name="" id="CHd">
-        <label for="CHd"><span class="label">عنوان</span></label>
-      </div>
-      <div class="cInput">
-        <input type="checkbox" name="" id="CH2d">
-        <label for="CH2d"><span class="label">چک باکس 2</span></label>
-      </div>
+      <p class="tInput">
+        <input type="email" name="email" autocomplete="email" placeholder="This is placeholder">
+      </p>
+    </article>
 
-      <div class="rInput">
-        <input type="radio" name="R" id="Radiod">
-        <label for="Radiod"><span class="label">The label</span></label>
-      </div>
-      <div class="rInput">
-        <input type="radio" name="R" id="R2d">
-        <label for="R2d"><span class="label">The label 2</span></label>
-      </div>
+    <article class="FInput eachRow x2">
+      <p class="fInput" style="width: 300px;">
+        <input id="DF1" type="file" name="localFile" multiple>
+        <label for="DF1" data-icon="description">Choose File</label>
+      </p>
+    </article>
 
-      <div class="bInput">
-        <input type="submit" id="sbd" value="submit">
-        <label for="sbd">Submit</label>
+    <article class="CInput">
+      <p class="cInput">
+        <input type="checkbox" name="CH" id="DC1" disabled>
+        <label for="DC1">
+          <span class="label">Disabled Label</span>
+        </label>
+      </p>
+      <p class="cInput">
+        <input type="checkbox" name="CH" id="DC2">
+        <label for="DC2"><span class="label">The label 2</span></label>
+      </p>
+      <p class="cInput">
+        <input type="checkbox" name="CH" id="DC3">
+        <label for="DC3"><span class="label">The label 3</span></label>
+      </p>
+    </article>
+
+    <article class="RInput">
+      <p class="rInput">
+        <input type="radio" name="R" id="DR1" disabled>
+        <label for="DR1"><span class="label">Disabled Label</span></label>
+      </p>
+      <p class="rInput">
+        <input type="radio" name="R" id="DR2">
+        <label for="DR2"><span class="label">The label 2</span></label>
+      </p>
+      <p class="rInput">
+        <input type="radio" name="R" id="DR3">
+        <label for="DR3"><span class="label">The label 3</span></label>
+      </p>
+    </article>
+
+    <article class="BInput eachRow x2">
+      <div>
+        <div class="bRequest">
+          <button id="DB1" type="button"></button>
+          <label for="DB1" data-icon="settings">Send request</label>
+        </div>
+
+        <div class="bInput">
+          <button id="DB2" type="button"></button>
+          <label for="DB2" data-icon="settings"></label>
+        </div>
       </div>
-      <div class="bInput">
-        <input type="submit" id="bid" value="reset">
-        <label for="bid">Reset</label>
+      <div>
+        <div class="bInput">
+          <input type="button" id="DB3" value="submit">
+          <label for="DB3" data-icon="done">Submit</label>
+        </div>
+        <div class="bInput">
+          <input type="button" id="DB4" value="submit" disabled>
+          <label for="DB4" data-icon="">Disabled</label>
+        </div>
       </div>
-    </div>
+    </article>
   </section>
 </body>
 
 <script>
+  const light = document.querySelector('.light');
   // tInput
-  document.querySelectorAll(".tInput").forEach((tInput) => {
+  light.querySelectorAll(".tInput").forEach((tInput) => {
     new TInput(tInput);
   });
   // cr-Input
-  document.querySelectorAll(".cInput").forEach((cInput) => {
+  light.querySelectorAll(".cInput").forEach((cInput) => {
     new CInput(cInput);
   });
-  document.querySelectorAll(".rInput").forEach((rInput) => {
+  light.querySelectorAll(".rInput").forEach((rInput) => {
     new RInput(rInput);
   });
   // Input type file
-  document.querySelectorAll(".fInput").forEach((fInput) => {
+  light.querySelectorAll(".fInput").forEach((fInput) => {
     new FInput(fInput);
   });
   // Input type button
-  document.querySelectorAll(".bInput").forEach((bInput) => {
-    let button = new BInput(bInput);
-    button.onClick(() => {
-      button
-        .fetch("https://reqres.in/api/register", "POST", {
-          email: "eve.holt@reqres.in",
-          password: "pistol",
-        })
-        .then((response) => {
-          if (response.ok && response.status === 200) {
-            button.setStatus("success");
-            return response.json();
-          } else {
-            button.setStatus("fail");
-            return response.json();
-          }
-        })
-        .then((result) => {
-          console.log(result);
-        })
-        .catch((err) => {
-          console.log("Network Error", err);
-          button.setStatus("fail");
-        });
-    }, true);
+  light.querySelectorAll(".bInput").forEach((bInput) => {
+    new BInput(bInput);
   });
+
+  let button = new BInput(light.querySelector(".bRequest"));
+  button.onClick(() => {
+    button
+      .fetch("https://reqres.in/api/register", "POST", {
+        email: "eve.holt@reqres.in",
+        password: "pistol",
+      })
+      .then((response) => {
+        if (response.ok && response.status === 200) {
+          button.setStatus("success");
+          return response.json();
+        } else {
+          button.setStatus("fail");
+          return response.json();
+        }
+      })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log("Network Error", err);
+        button.setStatus("fail");
+      });
+  }, true);
+
+  // Dark mode
+
+
+  const dark = document.querySelector('.dark');
+  // tInput
+  dark.querySelectorAll(".tInput").forEach((tInput) => {
+    new TInput(tInput).darkTheme(true);
+  });
+  // cr-Input
+  dark.querySelectorAll(".cInput").forEach((cInput) => {
+    new CInput(cInput).darkTheme(true);
+  });
+  dark.querySelectorAll(".rInput").forEach((rInput) => {
+    new RInput(rInput).darkTheme(true);
+  });
+  // Input type file
+  dark.querySelectorAll(".fInput").forEach((fInput) => {
+    new FInput(fInput).darkTheme(true);
+  });
+  // Input type button
+  dark.querySelectorAll(".bInput").forEach((bInput) => {
+    new BInput(bInput).darkTheme(true);
+  });
+
+  let dbutton = new BInput(dark.querySelector(".bRequest"));
+  dbutton.darkTheme(true);
+  dbutton.onClick(() => {
+    dbutton
+      .fetch("https://reqres.in/api/register", "POST", {
+        email: "eve.holt@reqres.in",
+        password: "pistol",
+      })
+      .then((response) => {
+        if (response.ok && response.status === 200) {
+          dbutton.setStatus("success");
+          return response.json();
+        } else {
+          dbutton.setStatus("fail");
+          return response.json();
+        }
+      })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        console.log("Network Error", err);
+        dbutton.setStatus("fail");
+      });
+  }, true);
+
+  const loading = document.getElementById("Loading");
+  window.onload = () => {
+    loading.style.opacity = 0;
+    setTimeout(() => {
+      loading.style.display = "none";
+    }, 500);
+  }
 </script>
 
 </html>

@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #ecf0f3;
+  font-family: Arial;
+  display: -ms-grid;
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  -ms-grid-columns: 2fr 1fr 2fr;
+      grid-template-columns: 2fr 1fr 2fr;
+      grid-template-areas: ". info .";
+}
+
+section.light,
+section.dark,
+section.info {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+h3 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+section.info {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: info;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #eee), color-stop(50%, #181818));
+  background: linear-gradient(90deg, #eee 50%, #181818 50%);
+}
+
+section.info article {
+  width: 100%;
+  text-align: center;
+}
+
+section.info article > * {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 40px;
+  border-radius: 3px;
+  border: 1px dashed #aaa;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(100, 100, 100, 0.5)), to(rgba(200, 200, 200, 0.5)));
+  background: linear-gradient(90deg, rgba(100, 100, 100, 0.5), rgba(200, 200, 200, 0.5));
+  color: #000;
+  font-family: "Courier New", Courier, monospace;
+}
+
+section.info article code {
+  font-family: monospace;
+}
+
+section article {
+  -ms-flex-preferred-size: 50px;
+      flex-basis: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.eachRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.item-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+}
+
+.span-item {
+  margin: 0 5px;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
+.x2 {
+  -ms-flex-preferred-size: 100px;
+      flex-basis: 100px;
+}
+
+.x3 {
+  -ms-flex-preferred-size: 150px;
+      flex-basis: 150px;
+}
+
+.x4 {
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+}
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes dots {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
+
+@keyframes dots {
+  0% {
+    content: "";
+  }
+  25% {
+    content: ".";
+  }
+  50% {
+    content: "..";
+  }
+  75% {
+    content: "...";
+  }
+  100% {
+    content: "";
+  }
+}
+
+#Loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#Loading .loader {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-right: 2px solid #333;
+  border-left: 2px solid #333;
+  border-radius: 30px;
+  -webkit-animation: rotate 2s infinite linear;
+          animation: rotate 2s infinite linear;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+#Loading .loader::before, #Loading .loader::after {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+}
+
+#Loading .loader::after {
+  left: -12px;
+  top: -12px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid transparent;
+  border-top: 1px solid #777;
+  border-bottom: 1px solid #777;
+  -webkit-animation: rotate 2s alternate infinite ease;
+          animation: rotate 2s alternate infinite ease;
+}
+
+#Loading .loader::before {
+  left: -23px;
+  top: -23px;
+  width: 90px;
+  height: 90px;
+  border: 1px solid transparent;
+  border-top: 1px solid #999;
+  border-bottom: 1px solid #999;
+  -webkit-animation: rotate 1.5s alternate infinite ease;
+          animation: rotate 1.5s alternate infinite ease;
+}
+
+#Loading .text {
+  margin-top: 2em;
+  font-family: monospace;
+}
+
+#Loading .text::after {
+  display: inline-block;
+  min-width: 25px;
+  content: "";
+  -webkit-animation: dots 1s infinite;
+          animation: dots 1s infinite;
+}
