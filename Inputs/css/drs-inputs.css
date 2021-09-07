@@ -1,0 +1,860 @@
+/*
+UPPERCASE classes are handled by JavaScript
+- .rtl can be added to body element
+*/
+/*--------------- Light Theme ---------------*/
+/*--------------- Dark Theme  ---------------*/
+/*--------------- General     ---------------*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes autofilled {}
+
+@keyframes autofilled {}@-webkit-keyframes noAutofill {}@keyframes noAutofill {}@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.tInput {
+  position: relative;
+  height: 36px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.tInput input,
+.tInput label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 0 10px;
+  border-radius: 2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  background: transparent;
+}
+
+.tInput label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-size: 0.9em;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  cursor: text;
+  color: #555555;
+}
+
+.tInput label::before {
+  content: attr(data-icon);
+  font-family: "Material Icons", "Material Icons Outlined", "Material Icons Round", "Material Icons Sharp", "Material Icons Two Tone";
+  margin: 0 0.2em 0 0;
+  height: 1em;
+}
+
+.tInput input {
+  width: 100%;
+  height: 36px;
+  outline: none;
+  border: 1px solid #aaa;
+  color: #222;
+}
+
+.tInput input:focus {
+  border-color: #444444;
+}
+
+.tInput input:disabled + label {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.tInput input::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.tInput input:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.tInput input::-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.tInput input::placeholder {
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.tInput input[type="email"], .tInput input[type="url"], .tInput input[type="tel"], .tInput input[type="number"] {
+  direction: ltr;
+  text-align: left;
+}
+
+.tInput input:-webkit-autofill, .tInput input:autofill {
+  -webkit-animation: autofilled;
+          animation: autofilled;
+  background: transparent !important;
+}
+
+.tInput input:not(:-webkit-autofill), .tInput input:not(:autofill) {
+  -webkit-animation: noAutofill;
+          animation: noAutofill;
+  background: transparent !important;
+}
+
+.tInput.ACTIVE label {
+  top: -2px;
+  left: 5px;
+  padding: 0 5px;
+  font-size: 0.8em;
+  background: #ecf0f3;
+  color: #222;
+}
+
+.tInput.ACTIVE input::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.tInput.ACTIVE input:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.tInput.ACTIVE input::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.tInput.ACTIVE input::placeholder {
+  opacity: 1;
+}
+
+.tInput.AUTOFILL label::after {
+  content: "Auto filled";
+  margin-left: auto;
+  margin-right: -20px;
+  color: #888;
+  font-family: monospace;
+}
+
+.tInput.NOLABEL input::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.tInput.NOLABEL input:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.tInput.NOLABEL input::-ms-input-placeholder {
+  opacity: 1;
+}
+
+.tInput.NOLABEL input::placeholder {
+  opacity: 1;
+}
+
+.tInput.rtlI label {
+  left: unset;
+  right: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.tInput.rtlI label::before {
+  margin: 0 0 0 0.2em;
+}
+
+.tInput.rtlI input {
+  text-align: right;
+  direction: rtl;
+}
+
+.tInput.rtlI.ACTIVE label {
+  left: unset;
+  right: 5px;
+}
+
+.tInput.rtlI.AUTOFILL label::after {
+  margin-left: -20px;
+  margin-right: auto;
+}
+
+.tInput.drs-darkTheme input {
+  border-color: #5f5f5f;
+  color: #bbb;
+}
+
+.tInput.drs-darkTheme input:focus {
+  border-color: #c5c5c5;
+}
+
+.tInput.drs-darkTheme label {
+  color: #888888;
+}
+
+.tInput.drs-darkTheme.ACTIVE label {
+  color: #bbb;
+  background: #181818;
+}
+
+@-webkit-keyframes check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes check {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.cInput,
+.rInput {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 36px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cInput label,
+.rInput label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cInput label span.label,
+.rInput label span.label {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  margin: 0 0.3em;
+  color: #222;
+}
+
+.cInput label span.cr-box,
+.rInput label span.cr-box {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  margin: 3px;
+  cursor: pointer;
+  border: 2px solid #aaa;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
+}
+
+.cInput label span.cr-box::after,
+.rInput label span.cr-box::after {
+  content: "";
+  position: absolute;
+  left: -36%;
+  top: -36%;
+  width: 172%;
+  height: 172%;
+  background: rgba(50, 50, 50, 0.1);
+  opacity: 0;
+}
+
+.cInput input,
+.rInput input {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.cInput input:focus + label span.cr-box,
+.rInput input:focus + label span.cr-box {
+  border-color: #444444;
+}
+
+.cInput input:focus + label span.cr-box::after,
+.rInput input:focus + label span.cr-box::after {
+  opacity: 0.8;
+}
+
+.cInput input:checked + label span.cr-box,
+.cInput input:checked:focus + label span.cr-box,
+.rInput input:checked + label span.cr-box,
+.rInput input:checked:focus + label span.cr-box {
+  border-color: #127900;
+}
+
+.cInput input:disabled + label span.cr-box,
+.rInput input:disabled + label span.cr-box {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.cInput input:disabled + label span.cr-box::after,
+.rInput input:disabled + label span.cr-box::after {
+  opacity: 0;
+}
+
+.cInput input:disabled + label span.label,
+.rInput input:disabled + label span.label {
+  opacity: 0.6;
+}
+
+.cInput:hover label span.cr-box::after,
+.rInput:hover label span.cr-box::after {
+  opacity: 1;
+}
+
+.cInput.drs-darkTheme input:focus + label span.cr-box,
+.rInput.drs-darkTheme input:focus + label span.cr-box {
+  border-color: #c5c5c5;
+}
+
+.cInput.drs-darkTheme input:checked:focus + label span.cr-box,
+.rInput.drs-darkTheme input:checked:focus + label span.cr-box {
+  border-color: #127900;
+}
+
+.cInput.drs-darkTheme label span.label,
+.rInput.drs-darkTheme label span.label {
+  color: #bbb;
+}
+
+.cInput.drs-darkTheme label span.cr-box,
+.rInput.drs-darkTheme label span.cr-box {
+  border-color: #5f5f5f;
+}
+
+.cInput.drs-darkTheme label span.cr-box::after,
+.rInput.drs-darkTheme label span.cr-box::after {
+  background: rgba(220, 220, 220, 0.1);
+}
+
+.cInput label span.cr-box {
+  border-radius: 2px;
+}
+
+.cInput label span.cr-box::after {
+  border-radius: 5px;
+}
+
+.cInput label span.cr-box svg {
+  width: 70%;
+  height: 70%;
+  margin: 15%;
+}
+
+.cInput label span.cr-box polyline {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+}
+
+.cInput label span.cr-box polyline {
+  fill: none;
+  stroke: #127900;
+  stroke-miterlimit: 50px;
+  stroke-width: 16px;
+}
+
+.cInput input:checked + label span.cr-box polyline {
+  -webkit-animation: check 0.1s ease-in-out forwards;
+          animation: check 0.1s ease-in-out forwards;
+}
+
+.rInput label span.cr-box {
+  border-radius: 50%;
+}
+
+.rInput label span.cr-box::after {
+  border-radius: 50%;
+}
+
+.rInput label span.cr-box::before {
+  content: "";
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 60%;
+  height: 60%;
+  background: #127900;
+  border-radius: 50%;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+}
+
+.rInput input:checked + label span.cr-box::before {
+  opacity: 1;
+}
+
+.fInput {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 250px;
+  height: 36px;
+}
+
+.fInput label {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 10px;
+  border-radius: 2px;
+  border: 1px dashed #aaa;
+  color: #222;
+  font-size: 0.92em;
+  overflow: hidden;
+  font-family: monospace;
+  line-break: anywhere;
+}
+
+.fInput label::before {
+  content: attr(data-icon);
+  font-family: "Material Icons", "Material Icons Outlined", "Material Icons Round", "Material Icons Sharp", "Material Icons Two Tone";
+  margin: 0 0.2em 0 0;
+  height: 1em;
+}
+
+.fInput label .fI-detail {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  padding: 1px 2px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: normal;
+  border-radius: 2px;
+  border: 1px solid #c4c4c4;
+  color: #555555;
+}
+
+.fInput input {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.fInput input:focus + label {
+  border-color: #444444;
+  color: black;
+}
+
+.fInput.active label {
+  color: black;
+  border-style: solid;
+}
+
+.fInput:hover label {
+  background: rgba(50, 50, 50, 0.05);
+}
+
+.fInput.drs-darkTheme label {
+  color: #bbb;
+  border-color: #5f5f5f;
+}
+
+.fInput.drs-darkTheme label .fI-detail {
+  border-color: #464646;
+  color: #a2a2a2;
+}
+
+.fInput.drs-darkTheme input:focus + label {
+  border-color: #c5c5c5;
+  color: white;
+}
+
+.fInput.drs-darkTheme.active label {
+  color: white;
+}
+
+.fInput.drs-darkTheme:hover label {
+  background: rgba(220, 220, 220, 0.05);
+}
+
+.fI-expand {
+  font-family: monospace;
+}
+
+.fI-expand > p {
+  position: relative;
+  padding: 0.5em 0.3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.fI-expand > p .fI-detail {
+  position: absolute;
+  right: 0.3em;
+  top: 50%;
+  padding: 1px 2px;
+  background: #ecf0f3;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  line-height: normal;
+  border-radius: 2px;
+  border: 1px solid rgba(50, 50, 50, 0.3);
+  color: #555555;
+}
+
+.fI-expand > p:nth-child(even) {
+  background: rgba(50, 50, 50, 0.1);
+}
+
+.fI-expand:empty {
+  display: none;
+}
+
+@-webkit-keyframes drs-pending {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 0) scale(0.5);
+            transform: translate(-50%, 0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(10);
+            transform: translate(-50%, -50%) scale(10);
+  }
+}
+
+@keyframes drs-pending {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, 0) scale(0.5);
+            transform: translate(-50%, 0) scale(0.5);
+  }
+  10% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+            transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%) scale(10);
+            transform: translate(-50%, -50%) scale(10);
+  }
+}
+
+.bInput {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 2px;
+}
+
+.bInput label {
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  cursor: pointer;
+  height: 36px;
+  padding: 0 1em 0 0.8em;
+  border: 1px dashed #aaa;
+  color: #222;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.bInput label::before {
+  content: attr(data-icon);
+  font-family: "Material Icons", "Material Icons Outlined", "Material Icons Round", "Material Icons Sharp", "Material Icons Two Tone";
+  margin: 0 0.2em 0 0;
+  height: 1em;
+}
+
+.bInput label::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, 100%) scale(0.5);
+          transform: translate(-50%, 100%) scale(0.5);
+  width: 36px;
+  height: 36px;
+  opacity: 0;
+  background: rgba(50, 50, 50, 0.2);
+  border-radius: 50%;
+  z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bInput label .bInput-progressbar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: #aaa;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+}
+
+.bInput input,
+.bInput button {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.bInput input:focus + label,
+.bInput button:focus + label {
+  border-color: #444444;
+}
+
+.bInput input:not(:disabled):active + label,
+.bInput button:not(:disabled):active + label {
+  border-color: #444444;
+  -webkit-box-shadow: 0 0 40px #aaa inset;
+          box-shadow: 0 0 40px #aaa inset;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.bInput input:disabled,
+.bInput button:disabled {
+  pointer-events: none;
+}
+
+.bInput input:disabled + label,
+.bInput button:disabled + label {
+  color: #888888;
+  border-color: #c4c4c4;
+  cursor: default;
+}
+
+.bInput.PENDING label {
+  color: #888888;
+}
+
+.bInput.PENDING label::after {
+  -webkit-animation: drs-pending 2s ease-in infinite;
+          animation: drs-pending 2s ease-in infinite;
+}
+
+.bInput.SUCCESS input:disabled + label,
+.bInput.SUCCESS button:disabled + label {
+  color: #222;
+  border-color: #4fb94f;
+}
+
+.bInput.SUCCESS input:disabled + label::after,
+.bInput.SUCCESS button:disabled + label::after {
+  background: rgba(5, 180, 0, 0.3);
+  -webkit-animation: drs-pending 2s ease-in forwards;
+          animation: drs-pending 2s ease-in forwards;
+}
+
+.bInput.FAIL input:disabled + label,
+.bInput.FAIL button:disabled + label {
+  color: #222;
+  border-color: #ff5151;
+}
+
+.bInput.FAIL input:disabled + label::after,
+.bInput.FAIL button:disabled + label::after {
+  background: rgba(180, 5, 0, 0.3);
+  -webkit-animation: drs-pending 2s ease-in-out forwards;
+          animation: drs-pending 2s ease-in-out forwards;
+}
+
+.bInput:hover input:not(:disabled) + label,
+.bInput:hover button:not(:disabled) + label {
+  background: rgba(50, 50, 50, 0.05);
+}
+
+.bInput.rtlI label {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.bInput.rtlI label::before {
+  margin: 0 0 0 0.2em;
+}
+
+.bInput.drs-bInput--IconOnly {
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+}
+
+.bInput.drs-bInput--IconOnly label {
+  padding: 0;
+}
+
+.bInput.drs-bInput--IconOnly label::before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  margin: 0;
+}
+
+.bInput.drs-darkTheme label {
+  color: #bbb;
+  border-color: #5f5f5f;
+}
+
+.bInput.drs-darkTheme label::after {
+  background: rgba(220, 220, 220, 0.2);
+}
+
+.bInput.drs-darkTheme input:focus + label,
+.bInput.drs-darkTheme button:focus + label {
+  border-color: #c5c5c5;
+}
+
+.bInput.drs-darkTheme input:not(:disabled):active + label,
+.bInput.drs-darkTheme button:not(:disabled):active + label {
+  border-color: #c5c5c5;
+  -webkit-box-shadow: 0 0 40px #5f5f5f inset;
+          box-shadow: 0 0 40px #5f5f5f inset;
+}
+
+.bInput.drs-darkTheme input:disabled + label,
+.bInput.drs-darkTheme button:disabled + label {
+  color: #555555;
+  border-color: #464646;
+}
+
+.bInput.drs-darkTheme.PENDING label {
+  color: #555555;
+}
+
+.bInput.drs-darkTheme.SUCCESS input:disabled + label,
+.bInput.drs-darkTheme.SUCCESS button:disabled + label {
+  color: #bbb;
+  border-color: #4fb94f;
+}
+
+.bInput.drs-darkTheme.SUCCESS input:disabled + label::after,
+.bInput.drs-darkTheme.SUCCESS button:disabled + label::after {
+  background: rgba(10, 255, 0, 0.2);
+}
+
+.bInput.drs-darkTheme.FAIL input:disabled + label,
+.bInput.drs-darkTheme.FAIL button:disabled + label {
+  color: #bbb;
+  border-color: #ff5151;
+}
+
+.bInput.drs-darkTheme.FAIL input:disabled + label::after,
+.bInput.drs-darkTheme.FAIL button:disabled + label::after {
+  background: rgba(255, 10, 0, 0.2);
+}
+
+.bInput.drs-darkTheme:hover input:not(:disabled) + label,
+.bInput.drs-darkTheme:hover button:not(:disabled) + label {
+  background: rgba(220, 220, 220, 0.05);
+}
+
+.flat-left,
+.flat-left label,
+.flat-left input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.flat-right,
+.flat-right label,
+.flat-right input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.tInput,
+.fInput,
+.bInput,
+.cInput,
+.rInput {
+  margin-top: 12px;
+}
