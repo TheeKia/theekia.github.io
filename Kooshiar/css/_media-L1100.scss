@@ -1,0 +1,22 @@
+@media screen and (max-width: 1100px) {
+  body {
+    header {
+      padding: 1rem 5%;
+    }
+
+    main {
+      width: 90%;
+      .item {
+        &.expanded {
+          article.container {
+            left: 5%;
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+  #prevHistory {
+    left: 95%;
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Xoosha | Photo Gallery</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <script src="./js/tools.js"></script>
+  <script src="./js/types.js"></script>
+  <script src="./js/app.js" defer></script>
+</head>
+
+<body>
+  <header id="header">
+    <button id="mobileSearchIcon" class="btn singleIcon" data-icon="search"></button>
+    <h1 class="header-title">XOOSHA</h1>
+    <div id="searchBar">
+      <p class="searchInput-container">
+        <input type="text" id="searchInput" placeholder="Search" />
+      </p>
+      <div class="searchBar-r">
+        <span class="ctrlK">Ctrl+K</span>
+        <span class="material-icons-round">search</span>
+      </div>
+    </div>
+    <p class="right-container">
+      <button class="btn" id="favorites" data-icon="bookmark_border">Show saves</button>
+      <button class="btn singleIcon" id="toggleTheme" data-icon="brightness_3"></button>
+    </p>
+  </header>
+
+  <div id="prevHistory" title="Previous product">navigate_before</div>
+
+  <div id="resultsInfo"></div>
+  <div id="nothing" style="display: none;">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_7fwvvesa.json" background="transparent" speed="1"
+      style="width: 300px; height: 300px;margin-left: 36px;" loop autoplay></lottie-player>
+    <h2><span style="color: red;">No</span> Result found!</h2>
+  </div>
+
+  <main id="mainContainer"></main>
+
+  <div id="footer-loading--container">
+    <div id="footer-loading--box" class="load-box--container">
+      loading
+      <div class="load-box tr"></div>
+      <div class="load-box bl"></div>
+      <div class="load-dot tr"></div>
+      <div class="load-dot tl"></div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+*{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::selection{background: deepskyblue;color: white;}
+::-moz-selection{background: deepskyblue;color: white;}
+::-webkit-scrollbar{width: 8px;}
+::-webkit-scrollbar-track{background: transparent;}
+::-webkit-scrollbar-thumb{background: #333;border-radius: 8px;}
+::-webkit-scrollbar-thumb:hover{background: #555;}
+a{
+  &:link, &:visited, &:hover{
+    text-decoration: none;transition: 0.1s ease;
+  }
+}

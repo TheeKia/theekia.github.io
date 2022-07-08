@@ -1,0 +1,35 @@
+@media screen and (max-width: 430px) {
+  body {
+    header {
+      padding: 1rem 3%;
+    }
+
+    main {
+      width: 94%;
+      .item {
+        article.container {
+          .info {
+            padding: 0.8rem;
+            .description {
+              font-size: 1rem;
+              line-height: 1.3rem;
+            }
+            a.domain {
+              left: 0.8rem;
+              display: none;
+            }
+            button.like {
+              right: 0.8rem;
+            }
+          }
+        }
+        &.expanded {
+          article.container {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}

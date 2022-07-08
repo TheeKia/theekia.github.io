@@ -1,0 +1,188 @@
+@media screen and (max-width: 850px) {
+  body {
+    header {
+      padding: 1rem 4%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      #mobileSearchIcon {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        display: flex;
+      }
+      .header-title {
+        justify-self: center;
+        margin-right: 0;
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      .right-container {
+        justify-content: end;
+        grid-column: 3/4;
+        grid-row: 1/2;
+        .btn {
+          font-size: 0;
+          &::after {
+            margin-left: 0;
+          }
+        }
+        #favorites {
+          margin-right: 0.5rem;
+        }
+      }
+      #searchBar {
+        position: fixed;
+        left: 0;
+        top: 80px;
+        width: 100%;
+        .searchInput-container {
+          width: 100%;
+          #searchInput {
+            width: 100%;
+            border-radius: 0;
+            transform: translateY(-15px);
+            opacity: 0;
+          }
+        }
+        .searchBar-r {
+          display: none;
+        }
+      }
+    }
+
+    main {
+      width: 92%;
+      .item {
+        article.container {
+          overflow-x: hidden;
+          .info {
+            h3.title {
+              line-height: 1.2rem;
+              font-size: 0.95rem;
+              margin-bottom: 0.4rem;
+            }
+            a.domain {
+              left: 0.8rem;
+              display: none;
+            }
+            .readMore {
+              display: block;
+            }
+          }
+        }
+        &.expanded {
+          article.container {
+            border: none;
+            width: 100vw;
+            height: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            flex-direction: column;
+            overflow-y: scroll;
+            img.mainImageTag {
+              display: block;
+            }
+            div.mainImage {
+              display: none;
+            }
+            .info {
+              overflow-y: scroll;
+              min-height: 100vh;
+              h3.title {
+                line-height: 1.6rem;
+                max-width: calc(100% - 25px);
+                font-size: 1.2rem;
+                margin-bottom: 1.2rem;
+              }
+              .description {
+                display: contents;
+                width: 100%;
+              }
+              section.similar-container {
+                .similar-grid {
+                  .similar-scrollLeft,
+                  .similar-scrollRight {
+                    display: none;
+                  }
+                }
+                h4::after {
+                  content: "";
+                }
+              }
+              a.domain {
+                display: flex;
+              }
+              button.like {
+                bottom: unset;
+                top: 1.4rem;
+              }
+            }
+          }
+        }
+      }
+    }
+    &.MOBILE_SEARCH {
+      margin-top: 20px;
+      header {
+        #searchBar {
+          .searchInput-container {
+            #searchInput {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    #resultsInfo {
+      text-align: center;
+      margin-top: 25px;
+      margin-bottom: -25px;
+    }
+
+    &.EXPANDED {
+      border-right: none; // for scrollbar
+      header {
+        border-right: none; // for scrollbar
+      }
+      .expanded {
+        article.container {
+          transition: border-right 0s;
+          border-right: none; // for scrollbar
+        }
+      }
+    }
+    &.LOADING {
+      main {
+        .col {
+          &:empty {
+            min-height: 260px;
+          }
+        }
+      }
+    }
+  }
+  #prevHistory {
+    top: 10px;
+    left: 10px;
+    margin-left: 0;
+  }
+  .DARKTHEME {
+    header {
+      #searchBar {
+        .searchBar-r {
+          background: $dark_inputBG;
+          color: #bbb;
+          &:hover {
+            background: $dark_inputBG_hover;
+          }
+          &:focus {
+            background: $dark_inputBG_focus;
+            border-color: #5f4c44;
+          }
+        }
+      }
+    }
+  }
+}
