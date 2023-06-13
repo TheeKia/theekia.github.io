@@ -1,83 +1,116 @@
-::selection{background: deepskyblue;color: white}
-::-moz-selection{background: deepskyblue;color: white}
-::-webkit-scrollbar{width: 10px;}
-::-webkit-scrollbar-track{background: transparent;}
-::-webkit-scrollbar-thumb{background: #333;border-radius: 8px;}
-::-webkit-scrollbar-thumb:hover{background: #555;}
-a:link{text-decoration: none;color: #DDD;transition: 0.1s ease}
-a:visited{text-decoration: none;color: #DDD;transition: 0.1s ease}
-a:hover{text-decoration: none;transition: 0.1s ease}
-*{
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap");
+
+::selection {
+  background: deepskyblue;
+  color: white;
+}
+::-moz-selection {
+  background: deepskyblue;
+  color: white;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+a:link {
+  text-decoration: none;
+  color: #ddd;
+  transition: 0.1s ease;
+}
+a:visited {
+  text-decoration: none;
+  color: #ddd;
+  transition: 0.1s ease;
+}
+a:hover {
+  text-decoration: none;
+  transition: 0.1s ease;
+}
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body{
+body {
   background: #181818;
-  color: #EEE;
-  font-family: Exo;
+  color: #eee;
+  font-family: "Exo 2", sans-serif;
 }
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-h1{
-  color: #DDD;
+h1 {
+  color: #ddd;
   font-size: 32px;
 }
-h2{
+h2 {
   margin: 0 10px 20px 10px;
 }
-a{
+a {
   display: flex;
   align-items: center;
-  i.material-icons-round{
+  i.material-icons-round {
     margin-right: 0.4em;
   }
 }
-.flex-container{
+.flex-container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 100vh;
-  .lottie{
+  .lottie {
     position: relative;
     width: 50%;
   }
-  .right-box{
+  .right-box {
     padding: 30px 10px;
     box-shadow: -20px 0 10px -20px #000;
     width: 50%;
     display: flex;
     flex-direction: column;
-    .flex-row{
+    .flex-row {
       margin: 10px;
       width: 300px;
       display: flex;
       justify-content: flex-end;
     }
-    form{
+    form {
       max-width: 300px;
     }
-    .tInput{
+    .tInput {
       width: 300px;
     }
-    .cInput{
+    .cInput {
       margin-right: 0;
     }
   }
 }
-.logged-in{
-  .flex-container{
-    .lottie{
+.logged-in {
+  .flex-container {
+    .lottie {
       flex-basis: 20%;
     }
-    .right-box{
+    .right-box {
       flex-basis: 80%;
     }
   }
 }
-i.material-icons-round{
+i.material-icons-round {
   margin: 0 5px;
 }
